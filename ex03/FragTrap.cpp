@@ -1,12 +1,18 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30)
 {
     std::cout << "FragTrap 2nd constructor called" << std::endl;
-    this->_hit_points = 100;
-    this->_energy_points = 100;
-    this->_attack_damage = 30;
 }
+
+// Yukarıda sıkıntı çıkarsa  bunu çalıştır. 
+// FragTrap::FragTrap(std::string name) : ClapTrap(name)
+// {
+//     std::cout << "FragTrap 2nd constructor called" << std::endl;
+//     this->_hit_points = 100;
+//     this->_energy_points = 100;
+//     this->_attack_damage = 30;
+// }
 
 FragTrap::FragTrap(const FragTrap& tmp) // bunu yapmamıza gerek var mı? : ClapTrap(tmp)
 {

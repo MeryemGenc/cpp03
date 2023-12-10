@@ -1,14 +1,11 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : _name(name), ClapTrap(name + std::string("_clap_name"), FragTrap::_hit_points, ScavTrap::_energy_points, FragTrap::_attack_damage) // olmuyosa direkt sabit değerlerii ata: ClapTrap(name, 100, 50, 20) gibi
 {
-    std::cout << "FragTrap 2nd constructor called" << std::endl;
-    this->_hit_points = 100;
-    this->_energy_points = 100;
-    this->_attack_damage = 30;
+    std::cout << "DiamondTrap 2nd constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& tmp) // bunu yapmamıza gerek var mı? : ClapTrap(tmp)
+DiamondTrap::DiamondTrap(const DiamondTrap& tmp) : ClapTrap(tmp)
 {
     std::cout << "DiamondTrap copy constructor called" << std::endl;
     *this = tmp;
@@ -32,18 +29,7 @@ DiamondTrap::~DiamondTrap()
     std::cout << "DiamondTrap destructor called" << std::endl;
 }
 
-void DiamondTrap::attack(const std::string& target)
+void DiamondTrap::whoAmI() // dene bak çalışıyo mu
 {
-    if (!this->_energy_points)
-    {
-        std::cout << this->_name << ", you have no enough energy point to attack." << std::endl;
-        return ;
-    }
-    if (this->_hit_points < this->_attack_damage)
-        std::cout << this->_name << ", you have no enough attack point to attack." << std::endl;
-    else
-    {
-        std::cout << "DiamondTrap " << _name << " attacks " << target << "; causing " << _attack_damage << " points of damage." << std::endl;
-        this->_energy_points--;
-    }
+    std::cout << "DiamondTrap name: " << this->_name << " ClapTrap name: " << ClapTrap::_name << std::endl;
 }

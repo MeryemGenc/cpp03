@@ -1,20 +1,17 @@
 #include "ScavTrap.hpp"
 
-/*
-
-        ScavTrap();
-        ScavTrap(std::string name);
-        ~ScavTrap();
-*/
-
-
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
 {
     std::cout << "ScavTrap 2nd constructor called" << std::endl;
-    this->_hit_points = 100;
-    this->_energy_points = 50;
-    this->_attack_damage = 20;
 }
+
+// ScavTrap::ScavTrap(std::string name) : ClapTrap(name) // 1 sıkıntı cıkarsa böyle kullan + claptrap 3. constructor ı sil
+// {
+//     std::cout << "ScavTrap 2nd constructor called" << std::endl;
+//     this->_hit_points = 100;
+//     this->_energy_points = 50;
+//     this->_attack_damage = 20;
+// }
 
 ScavTrap::ScavTrap(const ScavTrap& tmp) // bunu yapmamıza gerek var mı? : ClapTrap(tmp)
 {
@@ -58,6 +55,6 @@ void ScavTrap::attack(const std::string& target)
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap " << _name << " p is now in Gate keeper mode." << std::endl;
+    std::cout << "ScavTrap " << _name << " is now in Gate keeper mode." << std::endl;
 }
 

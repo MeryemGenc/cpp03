@@ -37,7 +37,7 @@ void ClapTrap::attack(const std::string& target)
         return ;
     }
     if (this->_hit_points < this->_attack_damage)
-        std::cout << this->_name << ", you have no enough attack point to attack." << std::endl;
+        std::cout << this->_name << ", you have no enough hit point to attack." << std::endl;
     else
     {
         std::cout << _name << " attacks " << target << "; causing " << _attack_damage << " points of damage." << std::endl;

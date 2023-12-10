@@ -4,7 +4,7 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
     protected:
         ScavTrap();
@@ -14,7 +14,9 @@ class ScavTrap : public ClapTrap
         ScavTrap& operator= (const ScavTrap&);
         ~ScavTrap();
 
-        void attack(const std::string& target);
+        /*void attack(const std::string& target);
+        void attack(std::string const& target);    bu 2 sinin farkı nedir*/ 
+        void attack(std::string const& target);
         void guardGate();
 };
 

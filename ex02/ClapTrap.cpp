@@ -5,6 +5,11 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_poi
     std::cout << "ClapTrap 2nd constructor called" << std::endl;
 }
 
+ClapTrap::ClapTrap(std::string name, unsigned int hp, unsigned int ep, unsigned int ad) : _name(name), _hit_points(hp), _energy_points(ep), _attack_damage(ad) 
+{
+    std::cout << "ClapTrap 3rd constructor called" << std::endl;
+}
+
 ClapTrap::ClapTrap(const ClapTrap& tmp)
 {
     std::cout << "ClapTrap copy constructor called" << std::endl;
